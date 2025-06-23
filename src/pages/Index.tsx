@@ -1,12 +1,60 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useEffect, useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import HeroSection from '@/components/HeroSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import AboutSection from '@/components/AboutSection';
+import ContactSection from '@/components/ContactSection';
+import FloatingNavbar from '@/components/FloatingNavbar';
+import ParticleBackground from '@/components/ParticleBackground';
 
 const Index = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div ref={containerRef} className="relative min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 overflow-x-hidden">
+      <ParticleBackground />
+      
+      {/* Animated background gradients */}
+      <motion.div 
+        style={{ y: backgroundY }}
+        className="fixed inset-0 opacity-30"
+      >
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+      </motion.div>
+
+      <FloatingNavbar />
+      
+      <main className="relative z-10">
+        <section id="hero">
+          <HeroSection />
+        </section>
+        
+        <section id="projects">
+          <ProjectsSection />
+        </section>
+        
+        <section id="about">
+          <AboutSection />
+        </section>
+        
+        <section id="contact">
+          <ContactSection />
+        </section>
+      </main>
+
+      {/* Scroll progress indicator */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 z-50 origin-left"
+        style={{ scaleX: scrollYProgress }}
+      />
     </div>
   );
 };
