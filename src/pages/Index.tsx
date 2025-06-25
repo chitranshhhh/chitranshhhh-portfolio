@@ -18,16 +18,16 @@ const Index = () => {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   return (
-    <div ref={containerRef} className="relative min-h-screen bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 overflow-x-hidden">
+    <div ref={containerRef} className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-x-hidden">
       <ParticleBackground />
       
       {/* Animated background gradients */}
       <motion.div 
         style={{ y: backgroundY }}
-        className="fixed inset-0 opacity-30"
+        className="fixed inset-0 opacity-20"
       >
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </motion.div>
 
       <FloatingNavbar />
@@ -52,7 +52,7 @@ const Index = () => {
 
       {/* Scroll progress indicator */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 to-purple-500 z-50 origin-left"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-400 to-cyan-500 z-50 origin-left"
         style={{ scaleX: scrollYProgress }}
       />
     </div>

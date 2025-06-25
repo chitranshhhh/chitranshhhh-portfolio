@@ -36,8 +36,10 @@ const ParticleBackground = () => {
         this.vx = (Math.random() - 0.5) * 0.5;
         this.vy = (Math.random() - 0.5) * 0.5;
         this.radius = Math.random() * 2 + 1;
-        this.alpha = Math.random() * 0.5 + 0.2;
-        this.color = Math.random() > 0.5 ? '0, 255, 255' : '128, 0, 255'; // cyan or purple
+        this.alpha = Math.random() * 0.4 + 0.2;
+        // Cyberpunk aqua/cyan color palette
+        const colors = ['0, 255, 255', '64, 224, 208', '0, 206, 209', '72, 209, 204'];
+        this.color = colors[Math.floor(Math.random() * colors.length)];
       }
 
       update() {
@@ -52,7 +54,7 @@ const ParticleBackground = () => {
 
         // Pulse alpha
         this.alpha += (Math.random() - 0.5) * 0.02;
-        this.alpha = Math.max(0.1, Math.min(0.6, this.alpha));
+        this.alpha = Math.max(0.1, Math.min(0.5, this.alpha));
       }
 
       draw() {
@@ -66,7 +68,7 @@ const ParticleBackground = () => {
         ctx.fill();
         
         // Add glow effect
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = 15;
         ctx.shadowColor = `rgb(${this.color})`;
         ctx.fill();
         
@@ -92,7 +94,7 @@ const ParticleBackground = () => {
         particle.draw();
       });
 
-      // Draw connections between nearby particles
+      // Draw connections between nearby particles with aqua color
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -101,8 +103,8 @@ const ParticleBackground = () => {
 
           if (distance < 100) {
             ctx.save();
-            ctx.globalAlpha = (1 - distance / 100) * 0.1;
-            ctx.strokeStyle = 'rgba(0, 255, 255, 0.2)';
+            ctx.globalAlpha = (1 - distance / 100) * 0.15;
+            ctx.strokeStyle = 'rgba(0, 255, 255, 0.3)';
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
