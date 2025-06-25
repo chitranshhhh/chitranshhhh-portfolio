@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -18,10 +17,10 @@ const Footer = () => {
           className="text-gray-300"
         >
           <p className="text-lg mb-2">
-            Made with <span className="text-red-400 animate-pulse">♥</span> and a lots of coffee
+            Made with <span className="text-red-400 animate-pulse">♥</span> and a lots of coffee!
           </p>
           <p className="text-sm text-gray-400">
-            © 2024 Chitransh Sharma. All rights reserved.
+            © 2025 Chitransh Sharma. All rights reserved.
           </p>
         </motion.div>
       </div>
