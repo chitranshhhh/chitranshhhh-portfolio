@@ -1,15 +1,13 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Brain, Palette, Zap, Building2, Calendar } from 'lucide-react';
 
 const AboutSection = () => {
   const skills = [
-    { name: "JavaScript/TypeScript", level: 95, color: "from-yellow-400 to-orange-500" },
+    { name: "JavaScript/TypeScript", level: 80, color: "from-yellow-400 to-orange-500" },
     { name: "React/Next.js", level: 90, color: "from-blue-400 to-cyan-500" },
-    { name: "Python/AI/ML", level: 85, color: "from-green-400 to-emerald-500" },
+    { name: "Python/AI/ML", level: 90, color: "from-green-400 to-emerald-500" },
     { name: "Node.js/Express", level: 88, color: "from-purple-400 to-pink-500" },
-    { name: "UI/UX Design", level: 82, color: "from-cyan-400 to-blue-500" },
     { name: "Database Design", level: 86, color: "from-indigo-400 to-purple-500" }
   ];
 
@@ -18,20 +16,15 @@ const AboutSection = () => {
       icon: <Code className="w-6 h-6" />,
       title: "Full-Stack Developer",
       description: "Building scalable web applications with modern technologies",
-      highlight: "3+ Years"
+      highlight: "An Year"
     },
     {
       icon: <Brain className="w-6 h-6" />,
       title: "AI Enthusiast",
       description: "Integrating machine learning models into user-friendly interfaces",
-      highlight: "10+ Projects"
+      highlight: "4 Projects"
     },
-    {
-      icon: <Palette className="w-6 h-6" />,
-      title: "UI/UX Designer",
-      description: "Creating intuitive and visually appealing user experiences",
-      highlight: "Design First"
-    },
+    
     {
       icon: <Zap className="w-6 h-6" />,
       title: "Problem Solver",
@@ -42,26 +35,22 @@ const AboutSection = () => {
 
   const internships = [
     {
-      company: "Tech Company",
-      role: "Software Development Intern",
-      duration: "Summer 2023",
-      description: "Developed responsive web applications using React and Node.js",
+
+
+      company: "Embedded Visions Technologies",
+      role: "Python Developer Intern",
+      duration: "Summer 2024",
+      description: " Proactively contributed to assigned projects, demonstrating diligence and a strong work ethic",
       technologies: ["React", "Node.js", "MongoDB"]
     },
     {
-      company: "AI Startup",
-      role: "Machine Learning Intern",
-      duration: "Winter 2023",
+      company: "Aarunya Community",
+      role: "Artifical Intelligence Intern",
+      duration: "Winter 2024",
       description: "Built ML models for data analysis and prediction systems",
       technologies: ["Python", "TensorFlow", "Pandas"]
     },
-    {
-      company: "Design Agency",
-      role: "UI/UX Design Intern",
-      duration: "Spring 2022",
-      description: "Created user-centered designs for mobile and web applications",
-      technologies: ["Figma", "Adobe XD", "Prototyping"]
-    }
+
   ];
 
   return (
@@ -101,17 +90,14 @@ const AboutSection = () => {
                 My Journey
               </h3>
               <div className="space-y-4 text-gray-300 leading-relaxed">
-                <p>
-                  I'm a passionate full-stack developer with expertise in modern web technologies and AI integration. 
-                  My journey began with curiosity about how digital experiences shape our daily lives, leading me to 
-                  specialize in creating interfaces that are both intelligent and intuitive.
-                </p>
-                <p>
-                  When I'm not coding, you'll find me exploring the latest in AI/ML research, contributing to open-source 
-                  projects, or experimenting with new design trends. I believe the best solutions come from understanding 
-                  both the technical and human sides of technology.
-                </p>
-              </div>
+  <p>
+    I'm an AI-focused full-stack developer passionate about building intelligent systems that improve lives. With hands-on experience in integrating generative AI and LLMs into real-world applications, I specialize in creating smart, responsive user experiences.
+  </p>
+  <p>
+    My work spans from developing health chatbots to building AI-enhanced web platforms, all with a strong emphasis on ethical, human-centered technology. I’m constantly exploring the evolving landscape of machine learning, NLP, and AI infrastructure to push boundaries and solve meaningful problems.
+  </p>
+</div>
+
             </motion.div>
 
             {/* Skills */}

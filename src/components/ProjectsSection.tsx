@@ -11,44 +11,34 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "AI-Powered Chat Application",
-      description: "Real-time chat app with AI assistance and smart reply suggestions",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop",
-      tech: ["React", "Node.js", "OpenAI", "WebSocket"],
+      title: "AI-Powered Health Companion: Intelligent Chat & Smart Care Support",
+      description: "A real-time health chat application integrating AI assistance for mental and general wellness, offering intelligent reply suggestions, mood analysis, and personalized care guidance",
+      image: "healthhive-interactive1.gif",
+      tech: ["React", "Node.js", "Llama 3.1 via Ollama", "Socket.IO"],
       category: "AI",
-      demo: "#",
-      github: "#"
+      LinkedIn: "https://www.linkedin.com/posts/chitransh-sharmaaa_ai-healthhive-chatbot-activity-7312073117135179777-dGzl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEo00fUB9u9l_lX15jDCmSQKyIhgipmOxwk",
+      github: "https://github.com/chitranshhhh/Health-Chatbot.git"
     },
     {
       id: 2,
-      title: "E-Commerce Dashboard",
-      description: "Modern admin dashboard with analytics and inventory management",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
-      tech: ["Next.js", "TypeScript", "Prisma", "TailwindCSS"],
+      title: "Video Fingerprinting System",
+      description: "A modern admin dashboard for analyzing and managing video content using fingerprinting technology, featuring real-time analytics, content matching, and inventory tracking.",
+      image: "/video_fingerprinting.gif",
+      tech: ["Node.js", "OpenCV", "Python", "FFmpeg"],
       category: "Web",
-      demo: "#",
-      github: "#"
+      LinkedIn: "https://www.linkedin.com/posts/chitransh-sharmaaa_hackathon-innovation-leadership-activity-7282069606800764930-bs4Q?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEo00fUB9u9l_lX15jDCmSQKyIhgipmOxwk",
+      github: "https://github.com/chitranshhhh/video_fingerprinting.git"
     },
     {
       id: 3,
-      title: "Mobile Fitness Tracker",
-      description: "Cross-platform mobile app for fitness tracking and goal setting",
-      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop",
-      tech: ["React Native", "Firebase", "Redux", "Chart.js"],
+      title: "Dialer App Prototype",
+      description: "A cross-platform mobile dialer app prototype with smart contact management, call logs, and seamless user interaction, built for performance and UI flexibility.",
+      image: "/call.gif",
+      tech: ["Android Studio", "Kotlin", "XML", "Android Emulator"],
       category: "Mobile",
-      demo: "#",
-      github: "#"
+      LinkedIn: "https://www.linkedin.com/posts/chitransh-sharmaaa_androiddevelopment-dialerapp-prototype-activity-7291123378210459648-Ym2H?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEo00fUB9u9l_lX15jDCmSQKyIhgipmOxwk",
+      github: "https://github.com/chitranshhhh/callingapp.git"
     },
-    {
-      id: 4,
-      title: "Machine Learning Model Trainer",
-      description: "Web platform for training and deploying ML models with visual interface",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&h=400&fit=crop",
-      tech: ["Python", "Flask", "TensorFlow", "React"],
-      category: "AI",
-      demo: "#",
-      github: "#"
-    }
   ];
 
   const filters = ['All', 'AI', 'Web', 'Mobile'];
@@ -124,22 +114,38 @@ const ProjectsSection = () => {
                 {/* Hover Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <div className="flex gap-4">
-                    <Button
-                      size="sm"
-                      className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Demo
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20"
-                    >
-                      <Github className="w-4 h-4 mr-2" />
-                      Code
-                    </Button>
-                  </div>
+  <a
+    href={project.LinkedIn}
+    target="_blank"
+    rel="noopener noreferrer"
+    tabIndex={-1}
+    className="focus:outline-none"
+  >
+    <Button
+      size="sm"
+      className="bg-white/20 backdrop-blur-sm border border-white/30 text-white hover:bg-white/30"
+    >
+      <ExternalLink className="w-4 h-4 mr-2" />
+      LinkedIn
+    </Button>
+  </a>
+  <a
+    href={project.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    tabIndex={-1}
+    className="focus:outline-none"
+  >
+    <Button
+      size="sm"
+      variant="outline"
+      className="border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20"
+    >
+      <Github className="w-4 h-4 mr-2" />
+      Code
+    </Button>
+  </a>
+</div>
                 </div>
               </div>
 

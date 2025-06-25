@@ -26,23 +26,46 @@ const ContactSection = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
+  try {
+    const response = await fetch('http://localhost:5000/api/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
     });
 
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    setIsSubmitting(false);
-  };
+    if (response.ok) {
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } else {
+      toast({
+        title: "Failed to send message",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
+    toast({
+      title: "Server Error",
+      description: "Unable to send your message right now.",
+      variant: "destructive",
+    });
+  }
+
+  setIsSubmitting(false);
+};
+
+
+  // setFormData({ name: '', email: '', subject: '', message: '' });
+  // setIsSubmitting(false);
 
   const copyEmail = async () => {
-    await navigator.clipboard.writeText('chitransh.sharma@example.com');
+    await navigator.clipboard.writeText('sharmachitransh9@gmail.com');
     setEmailCopied(true);
     toast({
       title: "Email copied!",
@@ -55,25 +78,25 @@ const ContactSection = () => {
     {
       icon: <Github className="w-5 h-5" />,
       label: 'GitHub',
-      href: 'https://github.com/chitransh',
+      href: 'https://github.com/chitranshhhh',
       color: 'hover:text-gray-300'
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: 'LinkedIn',
-      href: 'https://linkedin.com/in/chitransh-sharma',
+      href: 'https://linkedin.com/in/chitransh-sharmaaa',
       color: 'hover:text-blue-400'
     },
     {
       icon: <Instagram className="w-5 h-5" />,
       label: 'Instagram',
-      href: 'https://instagram.com/chitransh.codes',
+      href: 'https://instagram.com/chitranshhhh.____',
       color: 'hover:text-pink-400'
     },
     {
       icon: <Mail className="w-5 h-5" />,
       label: 'Email',
-      href: 'mailto:chitransh.sharma@example.com',
+      href: 'mailto:sharmachitransh9@gmail.com',
       color: 'hover:text-cyan-400'
     }
   ];
@@ -220,7 +243,7 @@ const ContactSection = () => {
                 <div className="flex items-center justify-between p-4 bg-white/5 border border-white/10 rounded-xl">
                   <div>
                     <p className="text-sm text-gray-400">Email Address</p>
-                    <p className="text-white font-medium">chitransh.sharma@example.com</p>
+                    <p className="text-white font-medium">sharmachitransh9@gmail.com</p>
                   </div>
                   <Button
                     onClick={copyEmail}
@@ -280,3 +303,7 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
+
+
+
