@@ -6,6 +6,7 @@ import AboutSection from '@/components/AboutSection';
 import ContactSection from '@/components/ContactSection';
 import FloatingNavbar from '@/components/FloatingNavbar';
 import ParticleBackground from '@/components/ParticleBackground';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,6 +49,8 @@ const Index = () => {
           <ContactSection />
         </section>
       </main>
+
+      <Footer />
 
       {/* Scroll progress indicator */}
       <motion.div
