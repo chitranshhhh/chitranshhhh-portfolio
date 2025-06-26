@@ -30,35 +30,27 @@ const ContactSection = () => {
   setIsSubmitting(true);
 
   try {
-    const response = await fetch('https://script.google.com/macros/s/AKfycbzQ79V3VU3hRUVjn0Y1BQARRZo5V5_GDYwb0dEcxPGENO8zunZY9vnaI8ofkkMi-f5e/exec', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData),
+    const response = await fetch("https://script.google.com/macros/s/AKfycbzQ79V3VU3hRUVjn0Y1BQARRZo5V5_GDYwb0dEcxPGENO8zunZY9vnaI8ofkkMi-f5e/exec", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(formData).toString(),
     });
 
     if (response.ok) {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
+      toast({ title: "Message sent successfully!", description: "I'll get back to you soon." });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } else {
-      toast({
-        title: "Failed to send message",
-        description: "Something went wrong. Please try again later.",
-        variant: "destructive",
-      });
+      toast({ title: "Failed to send message", description: "Please try again later.", variant: "destructive" });
     }
   } catch (error) {
-    toast({
-      title: "Server Error",
-      description: "Unable to send your message right now.",
-      variant: "destructive",
-    });
+    toast({ title: "Server Error", description: "Unable to send your message right now.", variant: "destructive" });
   }
 
   setIsSubmitting(false);
 };
+
 
 
   // setFormData({ name: '', email: '', subject: '', message: '' });
