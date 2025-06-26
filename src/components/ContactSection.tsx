@@ -30,7 +30,7 @@ const ContactSection = () => {
   setIsSubmitting(true);
 
   try {
-    const response = await fetch('https://chitranshhhh-porfolio.onrender.com/api/messages', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbzQ79V3VU3hRUVjn0Y1BQARRZo5V5_GDYwb0dEcxPGENO8zunZY9vnaI8ofkkMi-f5e/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
