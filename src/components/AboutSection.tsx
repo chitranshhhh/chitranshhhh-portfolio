@@ -37,6 +37,15 @@ const AboutSection = () => {
     {
 
 
+      company: "Bluestock Fintech",
+      role: "Software Developer Intern",
+      duration: "Summer 2025",
+      description: " Contributed to developing a page for their official website, focusing on responsive design and clean frontend implementation.",
+      technologies: ["React", "Node.js", "HTML", "CSS"]
+    },
+    {
+
+
       company: "Embedded Visions Technologies",
       role: "Python Developer Intern",
       duration: "Summer 2024",
@@ -91,7 +100,7 @@ const AboutSection = () => {
               </h3>
               <div className="space-y-4 text-gray-300 leading-relaxed">
   <p>
-    I'm an AI-focused full-stack developer passionate about building intelligent systems that improve lives. With hands-on experience in integrating generative AI and LLMs into real-world applications, I specialize in creating smart, responsive user experiences.
+    I'm a 4th year CSE student and an AI-focused full-stack developer passionate about building intelligent systems that improve lives. With hands-on experience in integrating generative AI and LLMs into real-world applications, I specialize in creating smart, responsive user experiences.
   </p>
   <p>
     My work spans from developing health chatbots to building AI-enhanced web platforms, all with a strong emphasis on ethical, human-centered technology. I’m constantly exploring the evolving landscape of machine learning, NLP, and AI infrastructure to push boundaries and solve meaningful problems.
@@ -252,8 +261,7 @@ const AboutSection = () => {
                 Fun Fact
               </h4>
               <p className="text-gray-300">
-                I once built an AI-powered plant monitoring system that sends me memes when my plants need water. 
-                Because who says technology can't have a sense of humor?
+                I’ve built a health chatbot, a portfolio site, basically, my projects can heal me and showcase me. That’s a deadly duo!
               </p>
             </motion.div>
           </div>
